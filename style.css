@@ -74,12 +74,13 @@ body{
     align-items: center;
     padding: 1rem;
     border-radius: 10px;
-    border: 10px solid rgb(255, 204, 0);
+    border: 7px solid rgb(255, 204, 0);
     box-shadow: 5px 5px 5px black;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .fix_img{
     height: 250px;
     width: 200px;
 }
-/*background: rgb(214,172,0);
-background: linear-gradient(80deg, rgba(214,172,0,1) 27%, rgba(242,239,0,1) 76%, rgba(255,255,255,1) 100%);*/
+

@@ -1,7 +1,9 @@
 let tavolo = $("#tavolo")
 let pacco = $("#pacchetto")
+
 let background;
 let gradient;
+let img_background;
 pacco.
     hover(function () {
         pacco.
@@ -18,23 +20,71 @@ pacco.
                         console.log(data)
                         if(data.types[0].type.name=="fire"){
                             background = "red"
-                            gradient= "linear-gradient(133deg, rgba(255,0,0,1) 0%, rgba(255,145,0,1) 67%, rgba(255,255,255,1) 100%)"
+                            gradient= "radial-gradient(circle, rgba(255,0,0,1) 0%, rgba(255,145,0,1) 100%, rgba(255,255,255,1) 100%)"
+                            img_background = "url(img/foco.jpg)"
                         }
-                        else if(data.types[0].type.name=="water") {
+                        else if(data.types[0].type.name=="water" ) {
                             background = " rgb(0,26,255)"
-                            gradient= "  linear-gradient(133deg, rgba(0,26,255,1) 0%, rgba(30,178,255,1) 76%, rgba(255,255,255,1) 100%)"
+                            gradient= "  radial-gradient(circle, rgba(0,26,255,1) 0%, rgba(30,178,255,1) 100%, rgba(255,255,255,1) 100%)"
+                            img_background = "url(img/mare.jpg)"
                         }
-                        else if(data.types[0].type.name=="grass") {
+                        else if(data.types[0].type.name=="ice") {
+                            background = " rgb(0,26,255)"
+                            gradient= "  radial-gradient(circle, rgba(0,26,255,1) 0%, rgba(30,178,255,1) 100%, rgba(255,255,255,1) 100%)"
+                            img_background = "url(img/neve.jpg)"
+                        }
+                        else if(data.types[0].type.name=="grass" || data.types[0].type.name=="bug") {
                             background = " rgb(22,101,0)"
-                            gradient= "linear-gradient(133deg, rgba(22,101,0,1) 0%, rgba(1,190,58,1) 76%, rgba(255,255,255,1) 100%)"
+                            gradient= "radial-gradient(circle, rgba(22,101,0,1) 0%, rgba(1,190,58,1) 100%, rgba(255,255,255,1) 100%)"
+                            img_background = "url(img/erba.jpg)"
                         }
                         else if(data.types[0].type.name=="electric") {
                             background = "rgb(214,172,0)"
-                            gradient="linear-gradient(133deg, rgba(214,172,0,1) 27%, rgba(242,239,0,1) 76%, rgba(255,255,255,1) 100%)"
+                            gradient="radial-gradient(circle, rgba(214,172,0,1) 27%, rgba(242,239,0,1) 100%, rgba(255,255,255,1) 100%)"
+                            img_background = "url(img/fulmini.png)"
                         }
-                        else if(data.types[0].type.name=="ghost") {
-                            background = "rgb(214,172,0)"
-                            gradient="linear-gradient(133deg, rgba(214,172,0,1) 27%, rgba(242,239,0,1) 76%, rgba(255,255,255,1) 100%)"
+                        else if(data.types[0].type.name=="ghost" ) {
+                            background = " rgb(122,0,214)"
+                            gradient="radial-gradient(circle, rgba(122,0,214,1) 27%, rgba(186,0,242,1) 100%, rgba(255,255,255,1) 100%)"
+                            img_background = "url(img/ghost.jpg)"
+                        }
+                        else if (data.types[0].type.name=="psychic") {
+                            background = " rgb(122,0,214)"
+                            gradient="radial-gradient(circle, rgba(122,0,214,1) 27%, rgba(186,0,242,1) 100%, rgba(255,255,255,1) 100%)"
+                            img_background = "url(img/psico.jpg)"
+                        }
+                        else if (data.types[0].type.name=="poison" ) {
+                            background = " rgb(122,0,214)"
+                            gradient="radial-gradient(circle, rgba(122,0,214,1) 27%, rgba(186,0,242,1) 100%, rgba(255,255,255,1) 100%)"
+                            img_background = "url(img/poison.webp)"
+                        }
+                        else if(data.types[0].type.name=="ground" || data.types[0].type.name=="fighting" || data.types[0].type.name=="rock") {
+                            background = " rgb(184,62,0)"
+                            gradient="radial-gradient(circle, rgba(184,62,0,1) 41%, rgba(214,123,1,1) 100%, rgba(255,255,255,1) 100%)"
+                            img_background = "url(img/roccia.png)"
+                        }
+                        else if(data.types[0].type.name=="steel") {
+                            background = " rgb(120,120,120)"
+                            gradient="radial-gradient(circle, rgba(120,120,120,1) 41%, rgba(182,182,182,1) 100%, rgba(255,255,255,1) 100%)"
+                        }
+                        else if(data.types[0].type.name=="fairy") {
+                            background = "rgb(251,45,240)"
+                            gradient="radial-gradient(circle, rgba(251,45,240,1) 41%, rgba(255,136,234,1) 100%, rgba(255,255,255,1) 100%)"
+                            img_background = "url(img/fairy.jpg)"
+                        }
+                        else if(data.types[0].type.name=="dark") {
+                            background = "rgb(32,32,32)"
+                            gradient="radial-gradient(circle, rgba(32,32,32,1) 41%, rgba(85,85,85,1) 100%, rgba(255,255,255,1) 100%)"
+                            img_background = "url(img/dark.webp)"
+                        }
+                        else if(data.types[0].type.name=="normal" || data.types[0].type.name=="flying" ) {
+                            background = "rgb(175,175,175)"
+                            gradient="radial-gradient(circle, rgba(175,175,175,1) 41%, rgba(244,240,240,1) 100%, rgba(255,255,255,1) 100%)"
+                        }
+                        else if (data.types[0].type.name=="dragon"){
+                            background = "rgb(175,175,175)"
+                            gradient="radial-gradient(circle, rgba(175,175,175,1) 41%, rgba(244,240,240,1) 100%, rgba(255,255,255,1) 100%)"
+                            img_background = "url(img/drake.jpg)"
                         }
                         let nome = $("<div>").
                             css("color", "black").
@@ -43,11 +93,14 @@ pacco.
                             addClass("carta").
                             append($(nome)).
                             append($("<div>").
+                            css("background-image",`${img_background}`).
                             addClass("content_img").
                             html(`<img class="fix_img" src="${data.sprites.other['official-artwork'].front_default}">`))
                         carta.
                         css("background",`${background}`).
-                        css("background",`${gradient}`)
+                        css("background",`${gradient}`);
+                     
+                        img_background = " "
                         background = " "
                         gradient = " "
                         tavolo.append(carta)
