@@ -83,4 +83,24 @@ body{
     height: 250px;
     width: 200px;
 }
-
+.mosse{
+    margin-top: 2rem;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+.testo{
+    display: flex;
+    justify-content: space-between;  
+}
+.retroCard{
+    position: absolute;
+    z-index: 9;
+    height: 500px;
+    width: 300px;
+    margin-right: 10px;
+}
+.retro_img{
+    height: 100%;
+    width: 100%;
+}
